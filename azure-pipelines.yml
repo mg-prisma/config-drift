@@ -7,7 +7,7 @@ trigger:
 - main
 
 
-pool: 'mikegraboski.BuildEnvironment.devops-build-environment'
+pool: 'devops-build-environment'
 
 steps:
 - task: CopyFiles@2
