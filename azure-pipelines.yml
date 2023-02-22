@@ -13,7 +13,6 @@ pool:
 steps:
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'deploy-iis-vm'
     Contents: '**'
     TargetFolder: '$(build.artifactstagingdirectory)/Terraform'
 
