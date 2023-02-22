@@ -11,6 +11,17 @@ pool:
   vmimage: ubuntu-latest
 
 steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.8'
+  displayName: 'Install Python 3.8'
+- script: pip install checkov
+  displayName: 'Install Checkov'
+- script: checkov -d / --bc-api-key 58a61f68-56da-42a0-98cf-b3a28a8632df::hnsned7bb7UZ7MlqSmb+3ogQBj4= --repo-id mg-prisma/config-drift --branch main
+  displayName: 'Scan with Prisma Cloud'
+  env:
+    PRISMA_API_URL: https://api2.prismacloud.io
+
 - task: CopyFiles@2
   inputs:
     Contents: '**'
