@@ -7,7 +7,8 @@ trigger:
 - main
 
 
-pool: 'devops-build-environment'
+pool:
+  vmimage: ubuntu-latest
 
 steps:
 - task: CopyFiles@2
