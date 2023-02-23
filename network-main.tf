@@ -1,11 +1,20 @@
 # Define Terraform provider
 terraform {
   required_version = ">= 0.12"
+  azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
+    }
+  }
+    backend "azurerm" {
+        resource_group_name  = "tfstate"
+        storage_account_name = "tfstate10156"
+        container_name       = "tfstate"
+        key                  = "terraform.tfstate"
+    }
 }
 # Configure the Azure provider
 provider "azurerm" {
-  environment = "public"
-  version     = ">= 2.0.0"
   features {}
 }
 # Create a resource group for network
