@@ -23,7 +23,7 @@ steps:
   displayName: 'Install Python 3.8'
 - script: pip install checkov
   displayName: 'Install Checkov'
-- script: checkov -d $(build.artifactstagingdirectory)/Terraform/ --bc-api-key 58a61f68-56da-42a0-98cf-b3a28a8632df::hnsned7bb7UZ7MlqSmb+3ogQBj4= --repo-id mg-prisma/config-drift --branch main
+- script: checkov -d $(build.artifactstagingdirectory)/Terraform/ --bc-api-key 4dfa5c1a-a74b-4b3a-87c4-b0921dee824c::ixk3uCgkrm2xDVX6EMSTVUMdm8g= --repo-id mg-prisma/config-drift --branch main
   displayName: 'Scan with Prisma Cloud'
   env:
     PRISMA_API_URL: https://api2.prismacloud.io
